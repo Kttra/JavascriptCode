@@ -84,6 +84,9 @@ function wordBlanks(myNoun, myAdjective, myVerb, myAdverb){
 	result += "The " + myAdjective + " " + myNoun + " " + myVerb + " to the store " + myAdverb + "."}
 }
 console.log(worldBlanks(“dog”, “big”, “ran”, “quickly”)); //The big dog ran to the store quickly.
+function addFive(num){
+	return num + 5;
+}
 ```
 
 **Arrays**
