@@ -381,11 +381,102 @@ console.log(source); //[3,4,5,6,7,8,9,10]
 Type of string that makes creating complex strings easier. Denoted by a backtick, ``` ` ```.
 ```js
 const person = {
-	name: “Zodiac”,
+	name: "Zodiac",
 	age: 56
 };
 
 const greeting = `Hello, my name is ${person.name}! I am ${person.age} years old.`;
 console.log(greeting);
 ```
+**Object Function**
+---------------
+```js
+const bicycle = {
+	gear: 2,
+	setGear(newGear){
+		“use strict”;
+		this.gear = newGear;
+	}
+};
+```
 
+**Class Syntax**
+--------------------
+```js
+var SpaceShuttle = function(targetPlanet){
+	this.targetPlanet = targetPlanet;
+}
+//Older way to create class
+var zeus = new SpaceShuttle(‘Jupiter’);
+console.log(zeus.targetPlanet);
+
+class SpaceShuttle{
+	constructor(targetPlanet){
+		this.targetPlanet = targetPlanet;
+	}
+}
+var zeus = new SpaceShuttle(‘Jupiter’)
+console.log(zeus.targetPlanet);
+
+//Creating a vegetable class
+function makeClass(){
+	class Vegetable{
+	 	constructor(name){
+			this.name = name;
+		}
+	}
+	return Vegetable;
+}
+const Vegetable = makeClass();
+const carrot = new Vegetable(‘carrot’);
+console.log(carrot.name);
+```
+
+**Private Variables in Class**
+-------------------
+```js
+class Book{
+	constructor(author){
+		this._author = author;
+	}
+	//getter
+	get writer(){
+		return this._author; 
+	}
+	//setter
+	set writer(updatedAuthor){
+		this._author = updatedAuthor;
+	}
+}
+function makeClass(){
+	class Thermostat{
+		constructor(temp){
+			this._temp = 5/9*(temp-32);//Convert to C
+		}
+		get temperature(){
+			return this._temp; //_ signifies it's a private variable
+		}
+		set temperature(updatedTemp){
+			this._temp = updatedTemp;
+		}
+	}
+	return Thermostat;
+}
+const Thermostat = makeClass();
+const thermos = new Thermostat(76);
+let temp = thermos.temperature; //Property
+thermos.temperature = 26;
+temp = thermos.temperature;
+```
+
+**Import & Export**
+----------
+```js
+export const capitalizeString = str => str.toUpperCase();
+
+import { capitalizeString } from "./string_function.js";
+const cap = capitalizeString(“Hello!”);
+
+//Import everything
+import * as capitalizeString from “./string_funciton”;
+```
