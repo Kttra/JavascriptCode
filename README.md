@@ -310,3 +310,82 @@ return i;
 //Const cannot be reassigned, arrays can be reassigned by index
 const WORD = "Cool";
 ```
+**Arrow Functions**
+-----------------------
+
+```js
+//Anonymous function
+var ourResults = function(){
+	return new Date();
+};
+//Arrow function version
+var magic = () => {
+	return new Date();
+};
+//Even shorter version
+var magic = () => new Date();
+
+//arr1, arr2 are the paremeters we passed
+var myConcat = (arr1, arr2) => {
+	return arr1.concat(arr2);
+};
+//Shorter version
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+console.log(myConcat([1,2],[3,4,5])); //[1,2,3,4,5]
+```
+
+**Rest Operator**
+---------------------
+Allows you to create a function that takes a different amount of arguments.
+```js
+const sum = (function(){
+	return function sum(...args){
+		//const args = [x,y,z];
+		return args.reduce((a,b)=>a+b,0);
+	};
+})();
+console.log(sum(1,2,3)); //6
+```
+
+**Destructuring**
+-------------
+```js
+var voxel = {x: 3.6, y: 7.4, z: 6.54};
+
+var x = voxel.x; //x = 3.6
+var y = voxel.y; //y = 7.4
+var z = voxel.z; //z = 6.54
+
+const{x: a, y: b, z: c} = voxel; //a=3.6, b=7.4,c=6.54 //quicker way of assigning things from an object into variables
+
+const [z, x, , y] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+console.log(z, x, y); //1, 2, 4
+let a = 8, b = 6;
+(() => {
+	"use strict";
+	[a, b] = [b, a];
+})();
+console.log(a, b); //6, 8
+
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list){
+	const [a, b, ...arr] = list;
+	return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr); //[1,2,3,4,5,6,7,8,9,10]
+console.log(source); //[3,4,5,6,7,8,9,10]
+```
+**Template Literals**
+-------------------
+Type of string that makes creating complex strings easier. Denoted by a backtick, ``` ` ```.
+```js
+const person = {
+	name: “Zodiac”,
+	age: 56
+};
+
+const greeting = `Hello, my name is ${person.name}! I am ${person.age} years old.`;
+console.log(greeting);
+```
+
