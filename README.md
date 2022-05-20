@@ -267,6 +267,7 @@ binToInteger(“10011”);
 
 **Ternary Operator**
 -----------------
+```js
 //condition ? statement-if-true : statement-if-false;
 function checkEqual(a, b){
 	return a===b ? true:false;
@@ -278,7 +279,7 @@ function checkSign(num){
 	return num > 0 ? "positive": num < 0 ? "negative" : "zero"; 
 }
 console.log(checkSign(0));
-
+```
 **Difference between Let & Var, Const**
 -----------------------------
 Starting with ES6 you can use let and const.
