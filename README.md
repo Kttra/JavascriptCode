@@ -256,10 +256,57 @@ console.log(ourRandomRange(1, 9)); //1-9
 **Conversion**
 ----------------
 ```js
-parseInt(“42”);
+parseInt(“42”); //Returns 42
 
-function convertToInteger(str){
+//binary number conversion
+function binToInteger(str){
 	return praseInt(str, 2);
 }
-convertToInteger(“10011”); //binary number
+binToInteger(“10011”);
+```
+
+**Ternary Operator**
+-----------------
+//condition ? statement-if-true : statement-if-false;
+function checkEqual(a, b){
+	return a===b ? true:false;
+	//return a===b; //same result
+}
+checkEqual(1,2);
+
+function checkSign(num){
+	return num > 0 ? "positive": num < 0 ? "negative" : "zero"; 
+}
+console.log(checkSign(0));
+
+**Difference between Let & Var, Const**
+-----------------------------
+Starting with ES6 you can use let and const.
+let only allows you to declare once. Scope of let is limited to block statement or expression it is declared in.
+
+```js
+function checkScope(){
+	"use strict"; //Catch common coding mistakes and unsafe actions
+	var i = "function scope";
+	if(true){
+		i = "block scope"; 
+		console.log(i); //block scope
+	} 
+	console.log(i); //block scope
+return i;
+}
+function checkScope2(){
+	"use strict";
+	let i = "function scope";
+	if(true){
+		let i = "block scope"; 
+		console.log(i); //block scope
+	} 
+	console.log(i); //function scope
+return i;
+}
+//block scope function scope
+
+//Const cannot be reassigned, arrays can be reassigned by index
+const WORD = "Cool";
 ```
