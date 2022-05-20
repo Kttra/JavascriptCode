@@ -111,3 +111,45 @@ var removedElement = ourArray.pop(); //Removes last element
 ourArray.shift(); //Removes first element
 overArray.unshift(“Happy”); //Adds to beginning of the array
 ```
+**Printing out an Array**
+---------------------
+Return an array after appending an element and shifting it.
+
+```js
+function nextInLine(arr, item){
+	arr.push(item); //Push in 6
+	return arr.shift(); //Return first item after shifting
+}
+var testArr = [1,2,3,4,5];
+
+console.log("Before: " + JSON.stringify(testArr)); //Before: [1,2,3,4,5]
+console.log(nextInLine(testArr, 6)); //1
+console.log("After: " + JSON.stringify(testArr)); //After: [2,3,4,5,6]
+```
+
+**If Statements**
+--------------
+```js
+//If statement example
+let isTrue = true;
+if(isTrue){
+	console.log("Yes, it's true.");
+}
+else{
+    console.log("Not true.");
+}
+//Equality operator
+let val = 10;
+if(val == 12){
+    //Do something
+}
+//Strict equality operator
+/*
+3 === 3 //True
+3 === '3' //False
+
+3 == 3 //True
+3 == '3' //True
+*/
+```
+
