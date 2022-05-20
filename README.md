@@ -144,12 +144,17 @@ if(val == 12){
     //Do something
 }
 //Strict equality operator
-/*
-3 === 3 //True
-3 === '3' //False
-
-3 == 3 //True
-3 == '3' //True
-*/
+if(3 === 3){
+    //True
+}
+else if(3 === '3'){
+    //False
+}
+if(3 == 3){
+    //True
+}
+if(3 == '3'){
+    //True
+}
 ```
 
