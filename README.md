@@ -92,24 +92,25 @@ function addFive(num){
 **Arrays**
 -----------------
 ```js
-var ourArray = [“Kevin”, 23];
+var ourArray = ["K", 23];
 //Nested array
-var myArray = [[“The universe”, 42], [“everything”, 2]];
+var myArray = [["The universe", 42], ["everything", 2]];
 var array2 = [1, 2, 3];
 array2[0]; //1
 array2[0] = 30; //[30, 2, 3]
+array2.length; //3
 //Array of arrays
 myArray = [[1,2,3],
            [4,5,6],
            [7,8,9],
-           [[10, 11, 12],13, 14]]];
+           [[10, 11, 12],13, 14]];
 var myData = myArray[0,0]; //1
 //push//pop
-var ourArray = [“K”, “J”, “cat”];
-ourArray.push([“happy”, “joy”]);
+var ourArray = ["K", "J", "cat"];
+ourArray.push(["happy", "joy"]);
 var removedElement = ourArray.pop(); //Removes last element
 ourArray.shift(); //Removes first element
-overArray.unshift(“Happy”); //Adds to beginning of the array
+ourArray.unshift("Happy"); //Adds to beginning of the array
 ```
 **Printing out an Array**
 ---------------------
@@ -138,7 +139,10 @@ if(isTrue){
 else{
     console.log("Not true.");
 }
-//Equality operator
+```
+**Equality operators**
+--------------
+```js
 let val = 10;
 if(val == 12){
     //Do something
@@ -158,3 +162,104 @@ if(3 == '3'){
 }
 ```
 
+**While Loop and Do While Loop**
+------------------------------
+```js
+var i = 0;
+while(i < 4){
+    i++;
+}
+do{
+    i++
+}while(i<5);
+```
+**For Loop and For Each**
+-------------------------
+```js
+//Normal for loop
+for(var i = 0; i < 4; i++){
+    //Do stuff 
+}
+//Foreach
+const fruits = ["apple", "orange", "cherry"];
+fruits.forEach(element => {
+    console.log(element);
+});
+```
+**Switch Statement**
+-----------------------
+```js
+val = 1;
+
+switch(val){
+	case 1:
+	case 10:
+		answer = “alpha”
+		break;
+	case 2:
+		answer = “beta”;
+		break;
+	default:
+		answer = “N/A”
+		break;
+}
+```
+**Objects**
+---------------
+```js
+var ourDog = {
+	"name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["everything!"],
+};
+var testObj = {
+	"hat": "ballcap",
+	"shirt": "jersey",
+	"shoes": "cleats",
+};
+var hatValue = testObj.hat;
+var shirtValue = testObj.shirt;
+var shoesValue = testObj[“shoes”]; //Another way to access property
+
+var myDog = {
+"name": "Camper",
+    "legs": 4,
+    "tails": 1,
+    "friends": [],
+}
+myDog.name = "Happy";
+//Adding new properties
+myDog['bark'] = "woof!"
+//Delete properties
+delete myDog.bark;
+
+//Check property
+var myObj = {
+	gift: "pony",
+	pet: "kitten",
+	bed: "sleigh"
+};
+var hasProp = myObj.hasOwnProperty("gift"); //becomes true
+```
+**Random**
+------------------
+```js
+var randomNumBet0and19 = Math.floor(Math.random()*20); //0-19
+
+//Random number between myMin & myMax, inclusive
+function ourRandomRange(myMin, myMax){
+    return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+}
+console.log(ourRandomRange(1, 9)); //1-9
+```
+**Conversion**
+----------------
+```js
+parseInt(“42”);
+
+function convertToInteger(str){
+	return praseInt(str, 2);
+}
+convertToInteger(“10011”); //binary number
+```
